@@ -1,3 +1,4 @@
+package Atividade1;
 import java.util.Scanner;
 
 public class MyThirdJavaProgram {
@@ -14,12 +15,14 @@ public class MyThirdJavaProgram {
         double api = scanner.nextDouble();
         System.out.print("SUB: ");
         double sub = scanner.nextDouble();
+        System.out.print("Extras: ");
+        double ex = scanner.nextDouble();
 
 
         double notaFinal = 0.0;
         double primeiraParte = (p1 * 0.6 + ((e1 + e2) / 2) * 0.4) * 0.5;
         double segundaParte = Math.max(((p1 * 0.6 + ((e1 + e2) / 2) * 0.4) - 5.9), 0) / ((p1 * 0.6 + ((e1 + e2) / 2) * 0.4) - 5.9);
-        notaFinal = primeiraParte + segundaParte * api + sub * 0.2;
+        notaFinal = primeiraParte + segundaParte * (api*0.5) + ex + (sub * 0.2);
 
         System.out.println("A nota final é: " + notaFinal);
     }

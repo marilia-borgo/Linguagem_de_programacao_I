@@ -1,3 +1,4 @@
+package Atividade1;
 public class MySecondJavaProgram {
     public static void main(String[] args) {
         int gastoJaneiro = 15000;
