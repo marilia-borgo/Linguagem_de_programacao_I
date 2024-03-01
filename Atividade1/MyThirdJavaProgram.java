@@ -5,7 +5,7 @@ public class MyThirdJavaProgram {
    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("10P1: ");
+        System.out.print("P1: ");
         double p1 = scanner.nextDouble();
         System.out.print("E1: ");
         double e1 = scanner.nextDouble();
