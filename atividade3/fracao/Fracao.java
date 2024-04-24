@@ -3,8 +3,15 @@ package atividade3.fracao;
 public class Fracao {
     private int numerador;
     private int denominador;
-    private int numerador2;
-    private int denominador2;
+
+    public Fracao(int numerador, int denominador) {
+        this.numerador = numerador;
+        if (denominador != 0) {
+            this.denominador = denominador;
+        } else {
+            throw new IllegalArgumentException("Denominador não pode ser zero.");
+        }
+    }
 
     public int getNumerador() {
         return numerador;
@@ -19,48 +26,48 @@ public class Fracao {
     }
 
     public void setDenominador(int denominador) {
-        this.denominador = denominador;
+        if (denominador != 0) {
+            this.denominador = denominador;
+        } else {
+            throw new IllegalArgumentException("Denominador não pode ser zero.");
+        }
     }
 
-    public int getNumerador2() {
-        return numerador2;
+
+
+    public Fracao somar(Fracao outra) {
+        int novoDenominador = denominador * outra.denominador;
+        int novoNumerador = (numerador * outra.denominador) + (outra.numerador * denominador);
+        Fracao resultado = new Fracao(novoNumerador, novoDenominador);
+        return resultado;
     }
 
-    public void setNumerador2(int numerador2) {
-        this.numerador2 = numerador2;
+    public Fracao subtrair(Fracao outra) {
+        int novoDenominador = denominador * outra.denominador;
+        int novoNumerador = (numerador * outra.denominador) - (outra.numerador * denominador);
+        Fracao resultado = new Fracao(novoNumerador, novoDenominador);
+        return resultado;
     }
 
-    public int getDenominador2() {
-        return denominador2;
+    public Fracao multiplicar(Fracao outra) {
+        int novoNumerador = numerador * outra.numerador;
+        int novoDenominador = denominador * outra.denominador;
+        Fracao resultado = new Fracao(novoNumerador, novoDenominador);
+        return resultado;
     }
 
-    public void setDenominador2(int denominador2) {
-        this.denominador2 = denominador2;
+    public Fracao dividir(Fracao outra) {
+        if (outra.numerador == 0) {
+            throw new ArithmeticException("Divisão por zero.");
+        }
+        int novoNumerador = numerador * outra.denominador;
+        int novoDenominador = denominador * outra.numerador;
+        Fracao resultado = new Fracao(novoNumerador, novoDenominador);
+        return resultado;
     }
 
-    public void somar() {
-        int novodenominador = denominador * denominador2;
-        int novonumerador = (novodenominador / denominador) * numerador + (novodenominador / denominador2) * numerador2;
-        System.out.println("A soma foi: " + novonumerador + "/" + novodenominador);
-
+    @Override
+    public String toString() {
+        return numerador + "/" + denominador;
     }
-
-    public void subtrair() {
-        int novodenominador = denominador * denominador2;
-        int novonumerador = (novodenominador / denominador) * numerador - (novodenominador / denominador2) * numerador2;
-        System.out.println("A subtração foi: " + novonumerador + "/" + novodenominador);
-    }
-
-    public void multiplicar() {
-        int novodenominador = denominador * denominador2;
-        int novonumerador = numerador * numerador2;
-        System.out.println("A multiplicação é: " + novonumerador + "/" + novodenominador);
-    }
-
-    public void dividir() {
-        int novodenominador = denominador * numerador2;
-        int novonumerador = numerador * denominador2;
-        System.out.println("A divisão é: " + novonumerador + "/" + novodenominador);
-    }
-
 }
