@@ -70,4 +70,13 @@ public class Fracao {
     public String toString() {
         return numerador + "/" + denominador;
     }
+
+    public static void main(String[] args) {
+        Fracao fracao1 = new Fracao(2, 5);
+        Fracao fracao2 = new Fracao(3, 7);
+
+        Fracao resultado = fracao1.somar(fracao2);
+
+        System.out.println("Resultado da soma: " + resultado);
+    }
 }
