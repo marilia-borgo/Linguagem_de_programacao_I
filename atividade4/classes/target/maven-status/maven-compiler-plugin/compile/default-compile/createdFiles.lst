@@ -1,0 +1,10 @@
+forms/Prato.class
+forms/App.class
+database_controllers/crudLivro.class
+forms/insetoController.class
+forms/pratoController.class
+module-info.class
+forms/Livro.class
+forms/mainController.class
+database_controllers/DatabaseConnection.class
+forms/Inseto.class

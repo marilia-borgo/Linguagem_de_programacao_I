@@ -3,12 +3,12 @@ package forms;
 public class Livro {
     private String titulo;
     private String autor;
-    private int quant_paginas;
+    private int quantPaginas;
 
-    public void setLivro (String titulo, String autor, int quant_paginas) {
+    public void setLivro (String titulo, String autor, int quantPaginas) {
         this.titulo = titulo;
         this.autor = autor;
-        this.quant_paginas = quant_paginas;
+        this.quantPaginas = quantPaginas;
     }
 
     public String getTitulo () {
@@ -20,7 +20,7 @@ public class Livro {
     }
 
     public int getQuantPaginas () {
-        return quant_paginas;
+        return quantPaginas;
     }
 
     public String abrir () {
